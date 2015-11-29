@@ -1,5 +1,6 @@
-require( '../testHelpers/emulateDom');
 
+const jsdomify = require('jsdomify').default;
+jsdomify.create();
 const Unexpected = require('unexpected');
 const UnexpectedReact = require('unexpected-react');
 
