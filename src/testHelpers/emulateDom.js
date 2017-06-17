@@ -1,12 +1,19 @@
 if (typeof document === 'undefined') {
+    const { JSDOM } = require('jsdom');
+    const jsdom = new JSDOM('<!doctype html><html><body></body></html>');
+    const { window } = jsdom;
 
-    const jsdom = require('jsdom').jsdom;
-    global.document = jsdom('');
-    global.window = global.document.defaultView;
-
-    for (let key in global.window) {
-        if (!global[key]) {
-            global[key] = global.window[key];
-        }
+    function copyProps(src, target) {
+        const props = Object.getOwnPropertyNames(src)
+            .filter(prop => typeof target[prop] === 'undefined')
+            .map(prop => Object.getOwnPropertyDescriptor(src, prop));
+        Object.defineProperties(target, props);
     }
+
+    global.window = window;
+    global.document = window.document;
+    global.navigator = {
+        userAgent: 'node.js'
+    };
+    copyProps(window, global);
 }
