@@ -12,9 +12,9 @@
     "domino": "^1.0.28",
     "jsdom": "^11.0.0",
     "mocha": "^3.4.2",
-	"react-test-renderer": "^15.6.1",
+    "react-test-renderer": "^15.6.1",
     "unexpected": "^10.29.0",
-	"unexpected-react": "^4.1.0"
+    "unexpected-react": "^4.1.0"
   },
   "dependencies": {
     "react": "^15.6.1",
