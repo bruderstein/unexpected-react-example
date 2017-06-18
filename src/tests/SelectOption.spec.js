@@ -6,7 +6,7 @@ const Unexpected = require('unexpected');
 const UnexpectedReact = require('unexpected-react');
 
 var React = require('react');
-var TestUtils = require('react-addons-test-utils');
+var TestUtils = require('react-test-renderer/shallow');
 
 const SelectOption = require('../SelectOption');
 
